@@ -49,5 +49,66 @@ This project is an e-commerce platform designed to handle various aspects of onl
 `npm i 
 npm start`
 
+### Admin Credentials for RBAC
+- username -> admin
+- password -> admin
+
+### Main APIs
+**User**
+- Login -> localhost:9090/api/user/login POST
+{
+      "username": "admin",
+      "password": "admin"
+}
+- Register ->  localhost:9090/api/user/signup POST
+{
+    "username":"john" ,
+    "name": "John Andrews",
+    "address": "234 Tx Plano",
+    "email": "john@myindiaa.com",
+    "password": "myindiaa",
+    "phone": "123456789"
+}    
+- Logout -> localhost:9090/api/user/logout GET
+
+**Product**
+- Create -> localhost:9090/api/product/ POST
+{
+    "name": "Panasonic AC",
+    "description": " Air conditioner product",
+    "price": 73000,
+    "category": "Appliances",
+    "stock": 20
+}
+
+- View -> localhost:9090/api/product/ GET
+- View Single -> localhost:9090/api/product/:id GET
+- EDIT Single -> localhost:9090/api/product/:id PUT
+- DELETE Single -> localhost:9090/api/product/:id DELETE
+
+**Order**
+- Create localhost:9090/api/order/ POST
+{
+  "products": [{
+          "product": "samsung s24",
+          "quantity": 2
+  }],
+    "totalAmount": 232
+}
+
+- View All localhost:9090/api/order/ GET
+
+- View Single localhost:9090/api/order/:id GET
+
+- Edit localhost:9090/api/order/:id PUT
+{
+  "status": "shipped"
+}
+
+- Delete localhost:9090/api/order/:id DELETE
+
+**Payment**
+
+
 ## Conclusion
 This e-commerce platform represents a comprehensive solution for online retail operations, incorporating advanced features for security, scalability, and performance optimization. It aims to provide a seamless and secure shopping experience for both users and administrators.
