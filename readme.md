@@ -54,7 +54,7 @@ npm start`
 - password -> admin
 
 ### Main APIs
-**User**
+*User*
 - Login -> 
 ```
 localhost:9090/api/user/login POST
