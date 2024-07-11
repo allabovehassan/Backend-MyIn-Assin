@@ -39,5 +39,11 @@ This project is an e-commerce platform designed to handle various aspects of onl
    - **Cookie Parser:** Utilized for parsing and handling cookies securely.
    - **Token Blacklisting:** Implemented mechanism to blacklist JWT tokens for enhanced security.
 
+### Features Summary
+- USER -> Register, Login, LogOut, Refresh Token.
+- Product -> Add, Edit, Update, Delete and View List Product.
+- Order -> Create Order, Add Products to Order, View All, View Specific, Update and Delete Order.
+- Payment -> Make Payment via stripe, Paypal, Logistic Api Integration. Can view the Payment Details
+
 ## Conclusion
 This e-commerce platform represents a comprehensive solution for online retail operations, incorporating advanced features for security, scalability, and performance optimization. It aims to provide a seamless and secure shopping experience for both users and administrators.
