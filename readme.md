@@ -45,9 +45,9 @@ This project is an e-commerce platform designed to handle various aspects of onl
 - Order -> Create Order, Add Products to Order, View All, View Specific, Update and Delete Order.
 - Payment -> Make Payment via stripe, Paypal, Logistic Api Integration. Can view the Payment Details
 
-#### Start App
-npm i 
-npm start
+### Start App
+`npm i 
+npm start`
 
 ## Conclusion
 This e-commerce platform represents a comprehensive solution for online retail operations, incorporating advanced features for security, scalability, and performance optimization. It aims to provide a seamless and secure shopping experience for both users and administrators.
