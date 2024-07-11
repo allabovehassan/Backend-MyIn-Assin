@@ -3,8 +3,6 @@ const userController = require("./userController");
 
 const userRouter = express.Router();
 
-userRouter.get("/", userController.check);
-
 /**
  * @api {post} /signup
  * @apiName signup
@@ -21,12 +19,35 @@ userRouter.get("/", userController.check);
 
 userRouter.post("/signup", userController.signup);
 
-//login
+/**
+ * @api {post} /login
+ * @apiName login
+ * @apiDescription New user can Login
+ * @apiPermission User
+ * @apiParam { String } username Need to pass (Required)
+ * @apiParam { String } password Need to pass (Required)
+ * @apiSuccess { Object} user Login and Token
+ */
+
 userRouter.post("/login", userController.login);
 
-//logout
+/**
+ * @api {get} /logout
+ * @apiName logout
+ * @apiDescription user can Logout
+ * @apiPermission User
+ * @apiSuccess { Object} user Logout
+ */
+
 userRouter.get("/logout", userController.logout);
 
+/**
+ * @api {post} /refreshToken
+ * @apiName refreshToken
+ * @apiDescription user can get refresh token
+ * @apiPermission User
+ * @apiSuccess { Object} user refresh token
+ */
 //getNewToken
 userRouter.post(
   "/refreshToken",

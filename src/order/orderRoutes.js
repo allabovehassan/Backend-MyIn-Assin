@@ -6,34 +6,68 @@ const {
 
 const orderRouter = express.Router();
 
-//creation order route
+/**
+ * @api {post} /
+ * @apiName create Order
+ * @apiDescription  user can create order
+ * @apiPermission User
+ * @apiParam { String } product Need to pass (Required)
+ * @apiParam { String } qunatity Need to pass (Required)
+ * @apiSuccess { Object} data of created order
+ */
 orderRouter.post("/", orderController.createOrder);
 
-// Get all orders (admin route)
+/**
+ * @api {get} /
+ * @apiName get Order
+ * @apiDescription  user can get order
+ * @apiPermission User , Admin
+ * @apiSuccess { Object} data of created order
+ */
 orderRouter.get(
   "/",
   authorise(true),
   orderController.getOrders
 );
 
-// Get a specific order by ID (protected route)
+/**
+ * @api {get} /:id
+ * @apiName getSingleOrder
+ * @apiDescription  Get a specific order by ID
+ * @apiPermission User
+ * @apiParam { String } order id to pass (Required)
+ * @apiSuccess { Object} data of created order
+ */
 orderRouter.get(
   "/:id",
   orderController.getSingleOrder
 );
 
-// Update order status (admin route)
+/**
+ * @api {put} /:id
+ * @apiName updateOrder
+ * @apiDescription  Update order status (admin route)
+ * @apiPermission User, Admin
+ * @apiParam { String } order id to pass (Required)
+ * @apiSuccess { Object} data of created order
+ */
 orderRouter.put(
   "/:id",
   authorise(true),
   orderController.updateOrder
 );
 
-// Delete an order (protected route)
+/**
+ * @api {delete} /:id
+ * @apiName deleteOrder
+ * @apiDescription  Delete an order
+ * @apiPermission User
+ * @apiParam { String } order id to pass (Required)
+ * @apiSuccess { Object} data of created order
+ */
 orderRouter.delete(
   "/:id",
   orderController.deleteOrder
 );
 
 module.exports = { orderRouter };
-// export { orderRouter };

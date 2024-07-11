@@ -54,7 +54,7 @@ npm start`
 - password -> admin
 
 ### Main APIs
-*User*
+**User**
 - Login -> 
 ```
 localhost:9090/api/user/login POST
@@ -145,6 +145,20 @@ localhost:9090/api/order/:id PUT
 localhost:9090/api/order/:id DELETE
 ```
 **Payment**
+- Make Payment
+```
+localhost:9090/api/payment/ POST
+{
+   "orderId": "66900660f594bdbc532d8cca" ,
+    "paymentMethod": "stripe",
+    "amount": 5000
+}
+
+```
+- Get Payment Details
+```
+localhost:9090/api/payment/:id GET
+```
 
 
 ## Conclusion

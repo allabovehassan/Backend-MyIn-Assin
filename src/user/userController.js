@@ -11,10 +11,6 @@ const fs = require("fs");
 
 require("dotenv").config();
 
-async function check(req, res) {
-  res.send(messages.VALIDATION_ERROR);
-}
-
 // sign up user
 async function signup(req, res) {
   try {
@@ -269,7 +265,6 @@ async function newLoginToken(req, res) {
 }
 
 module.exports = {
-  check,
   signup,
   login,
   logout,

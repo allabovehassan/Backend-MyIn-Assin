@@ -29,6 +29,14 @@ async function payment(req, res) {
       });
     }
 
+    if (order.user.toString() !== req.user.id) {
+      return res.status(403).json({
+        success: false,
+        message: "Unauthorized access",
+        data: null
+      });
+    }
+
     let paymentStatus;
     let transactionId;
 
@@ -137,6 +145,17 @@ async function paymentDetails(req, res) {
         message: "Payment not found",
         data: null
       });
+
+    if (
+      payment.user._id.toString() !== req.user.id &&
+      !req.user.isAdmin
+    ) {
+      return res.status(403).json({
+        success: false,
+        message: "Unauthorized access",
+        data: null
+      });
+    }
 
     return res.status(200).send({
       success: true,
